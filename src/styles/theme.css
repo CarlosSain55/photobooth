@@ -1,0 +1,81 @@
+:root{
+  /* PIX55 palette: dark blue / light blue / orange / black / red */
+  --void: #EAF6FD;
+  --panel: #FFFFFF;
+  --panel-2: #F1F9FF;
+  --paper: #14181C;
+  --paper-dim: #3A4550;
+  --brass: #E8391F;
+  --brass-bright: #FF6A45;
+  --brass-dark: #14181C;
+  --wine: #1E7FB8;
+  --wine-bright: #5DC9F0;
+  --orange: #F5A860;
+  --ink: #14181C;
+  --ink-dim: rgba(20,24,28,0.64);
+  --ink-faint: rgba(20,24,28,0.42);
+  --shadow-deep: rgba(20,50,80,0.18);
+  --radius-frame: 200px;
+}
+
+*{ box-sizing: border-box; }
+
+html,body{
+  margin:0; padding:0;
+  background: var(--void);
+  color: var(--ink);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+body{
+  position:relative;
+  overflow-x:hidden;
+  background:
+    radial-gradient(ellipse 120% 70% at 15% -10%, rgba(93,201,240,0.45), transparent 60%),
+    radial-gradient(ellipse 90% 60% at 90% 5%, rgba(245,168,96,0.30), transparent 55%),
+    radial-gradient(ellipse 100% 60% at 50% 115%, rgba(232,57,31,0.10), transparent 60%),
+    linear-gradient(180deg, #EAF6FD 0%, #F6FBFE 55%, #FFFFFF 100%);
+}
+
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 42% 14% at 18% 18%, rgba(255,255,255,0.85), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 30% 10% at 68% 10%, rgba(255,255,255,0.75), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 46% 15% at 88% 30%, rgba(255,255,255,0.65), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 36% 12% at 6% 55%, rgba(255,255,255,0.55), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 50% 16% at 55% 78%, rgba(255,255,255,0.45), rgba(255,255,255,0) 70%);
+  filter: blur(2px);
+  animation: driftClouds 70s ease-in-out infinite alternate;
+}
+@keyframes driftClouds{
+  from{ transform: translateX(-2%); }
+  to{ transform: translateX(2%); }
+}
+
+h1,h2,h3, .display{
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin:0;
+}
+
+.mono{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+.visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);
+}

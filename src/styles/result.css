@@ -1,0 +1,30 @@
+.result-wrap{
+  display:flex; flex-direction:column; align-items:center;
+}
+#resultCanvasHolder{
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px var(--shadow-deep);
+}
+#resultCanvasHolder img{
+  max-width: 100%;
+  display:block;
+}
+
+.developing{
+  text-align:center;
+  padding: 80px 0;
+}
+.developing .display{
+  font-size: 1.8rem;
+  color: var(--paper);
+}
+.developing .tray{
+  width: 46px; height: 46px;
+  margin: 22px auto 0;
+  border: 2px solid var(--brass-dark);
+  border-top-color: var(--brass);
+  border-radius:50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin{ to{ transform: rotate(360deg); } }
