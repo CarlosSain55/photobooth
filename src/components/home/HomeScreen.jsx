@@ -34,7 +34,7 @@ export default function HomeScreen() {
           onKeyDown={activateOnKey(() => chooseMode('duo'))}
         >
           <div className="num">II</div>
-          <h2>Duo</h2>
+          <h2>Online</h2>
           <p>Open the booth from two places at once. Ring each other in, sit for the same three frames, together.</p>
         </div>
       </div>
