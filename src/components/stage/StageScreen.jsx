@@ -18,7 +18,9 @@ export default function StageScreen() {
         <div className="camera-block">
           <div className="oval-pair">
             <div className="oval local">
-              <video ref={videoLocalRef} autoPlay playsInline muted style={{ filter: filterCss }}></video>
+              <div className="video-filter-layer" style={{ filter: filterCss }}>
+                <video ref={videoLocalRef} autoPlay playsInline muted></video>
+              </div>
               {countdown.visible && (
                 <div className="countdown-overlay">
                   <span className="num">{countdown.num}</span>
@@ -29,7 +31,9 @@ export default function StageScreen() {
               <>
                 <div className="hinge"></div>
                 <div className="oval remote">
-                  <video ref={videoRemoteRef} autoPlay playsInline style={{ filter: filterCss }}></video>
+                  <div className="video-filter-layer" style={{ filter: filterCss }}>
+                    <video ref={videoRemoteRef} autoPlay playsInline></video>
+                  </div>
                   {!remoteStream && <div className="placeholder">waiting for the other booth…</div>}
                 </div>
               </>
